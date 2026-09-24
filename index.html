@@ -1,1 +1,465 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Romeo Kandlen | IT · Finance · Transformation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: rgba(7,17,31,.92);
+      border-bottom: 1px solid #1e2d40;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: .5px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      color: #aebbd0;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      background:
+        radial-gradient(circle at 80% 20%, #173f67 0%, transparent 30%),
+        radial-gradient(circle at 10% 80%, #12344f 0%, transparent 28%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #65c7ff;
+      border: 1px solid #275f82;
+      background: #0c2135;
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 9vw, 92px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg,#62c6ff,#9b8cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .intro {
+      max-width: 760px;
+      font-size: 21px;
+      color: #b9c5d6;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: 1px solid #31445c;
+    }
+
+    .primary {
+      background: #f4f7fb;
+      color: #07111f;
+      border-color: #f4f7fb;
+    }
+
+    section {
+      padding: 80px 7%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #65c7ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(30px,5vw,48px);
+      margin-bottom: 35px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: #0d1928;
+      border: 1px solid #1e3045;
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: #9eafc4;
+      font-size: 15px;
+    }
+
+    .experience {
+      margin-top: 25px;
+      border-left: 2px solid #284762;
+      padding-left: 25px;
+    }
+
+    .job {
+      margin-bottom: 35px;
+    }
+
+    .job span {
+      color: #65c7ff;
+      font-size: 13px;
+    }
+
+    .job h3 {
+      font-size: 22px;
+      margin: 4px 0 7px;
+    }
+
+    .job p {
+      color: #aebbd0;
+      max-width: 850px;
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .number {
+      background: #0d1928;
+      border: 1px solid #1e3045;
+      padding: 25px;
+      border-radius: 14px;
+    }
+
+    .number strong {
+      display: block;
+      color: #65c7ff;
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    .number span {
+      color: #9eafc4;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 110px;
+    }
+
+    .contact p {
+      color: #aebbd0;
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      color: #718096;
+      padding: 30px;
+      border-top: 1px solid #1e2d40;
+      font-size: 13px;
+    }
+
+    @media(max-width:700px) {
+      nav {
+        padding: 16px 5%;
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .hero,
+      section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .intro {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">RK.</div>
+
+  <div class="navlinks">
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#impact">Impact</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div class="hero-content">
+
+    <div class="tag">
+      IT · FINANCE · DIGITAL TRANSFORMATION
+    </div>
+
+    <h1>
+      Romeo<br>
+      <span class="gradient">Kandlen.</span>
+    </h1>
+
+    <p class="intro">
+      Senior IT Project Manager & Controlling Leader with extensive
+      experience connecting finance, technology, data and business processes.
+      From ERP transformation and BI to automation, scalable reporting
+      architectures and international IT projects.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#experience">
+        View Experience
+      </a>
+
+      <a class="btn" href="#contact">
+        Contact
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+<section id="expertise">
+
+  <div class="section-label">Expertise</div>
+  <h2>Where business meets technology.</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>IT Project Management</h3>
+      <p>
+        ERP implementations, international rollouts, UAT,
+        stakeholder management and complex transformation programs.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Finance & Controlling</h3>
+      <p>
+        Management reporting, profitability, budgeting,
+        cash flow, data quality and finance transformation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Microsoft Dynamics 365</h3>
+      <p>
+        Dynamics 365 Finance & Operations, process design,
+        implementation, integration and business requirements.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>BI & Data</h3>
+      <p>
+        Power BI, Qlik Sense, SQL, data architecture,
+        KPI systems and automated management reporting.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Automation</h3>
+      <p>
+        Workflow automation, digital processes,
+        AI-supported workflows and scalable reporting solutions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Leadership</h3>
+      <p>
+        Building teams, leading cross-functional projects
+        and connecting IT, Finance and operational business units.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="experience">
+
+  <div class="section-label">Experience</div>
+  <h2>25 years of transformation.</h2>
+
+  <div class="experience">
+
+    <div class="job">
+      <span>2023 – 2025</span>
+      <h3>STARCAR Europa Service Group AG</h3>
+      <p>
+        IT Project Manager Dynamics 365 and later Head of Group Controlling.
+        Responsible for ERP transformation, reporting architecture,
+        profit-center structures, pricing, data quality and management reporting.
+      </p>
+    </div>
+
+    <div class="job">
+      <span>Senior Project Management</span>
+      <h3>GERRY WEBER</h3>
+      <p>
+        Senior ERP Project Manager with focus on Microsoft Dynamics 365
+        and digital transformation within an international fashion environment.
+      </p>
+    </div>
+
+    <div class="job">
+      <span>20+ years</span>
+      <h3>Enterprise Mobility</h3>
+      <p>
+        Long-term leadership career across IT, controlling and corporate
+        functions. Built IT structures, delivered international technology
+        projects and developed automated finance and reporting solutions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="impact">
+
+  <div class="section-label">Selected Impact</div>
+  <h2>Transformation measured in results.</h2>
+
+  <div class="numbers">
+
+    <div class="number">
+      <strong>€1.5M</strong>
+      <span>Impact through debtor banking transformation</span>
+    </div>
+
+    <div class="number">
+      <strong>€420K</strong>
+      <span>Annual savings through network & VoIP transformation</span>
+    </div>
+
+    <div class="number">
+      <strong>€400K</strong>
+      <span>Savings through digital archive transformation</span>
+    </div>
+
+    <div class="number">
+      <strong>3,000+</strong>
+      <span>Automated BI reports per year</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="contact" class="contact">
+
+  <div class="section-label">Contact</div>
+
+  <h2>Let's build what comes next.</h2>
+
+  <p>
+    Open to senior leadership, IT project management,
+    finance transformation and digitalization opportunities.
+  </p>
+
+  <a class="btn primary"
+     href="mailto:romeotrust@gmail.com">
+     Contact Romeo
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 Romeo Kandlen · IT · Finance · Transformation
+</footer>
+
+</body>
+</html>
