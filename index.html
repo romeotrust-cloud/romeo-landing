@@ -1,317 +1,475 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romeo Kandlen | IT · Finance · Transformation</title>
+<meta name="description" content="Romeo Kandlen – Senior IT Project Manager, Controlling Leader und Experte für digitale Transformation, ERP, BI und Automatisierung.">
 
-  <title>Romeo Kandlen | IT · Finance · Transformation</title>
+<style>
+:root{
+  --bg:#07111f;
+  --panel:#0d1928;
+  --line:#1e3045;
+  --text:#f5f7fa;
+  --muted:#aebbd0;
+  --accent:#65c7ff;
+  --accent2:#9b8cff;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
 
-    html {
-      scroll-behavior: smooth;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07111f;
-      color: #f5f7fa;
-      line-height: 1.6;
-    }
+a{color:inherit;text-decoration:none}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* NAVIGATION */
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  padding:15px 6%;
+  background:rgba(7,17,31,.95);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 7%;
-      background: rgba(7,17,31,.92);
-      border-bottom: 1px solid #1e2d40;
-      backdrop-filter: blur(12px);
-    }
+.logo{
+  font-size:21px;
+  font-weight:900;
+  margin-right:auto;
+}
 
-    .logo {
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: .5px;
-    }
+.navlinks{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-size:14px;
+  color:#c3cede;
+}
 
-    .navlinks {
-      display: flex;
-      gap: 24px;
-      color: #aebbd0;
-      font-size: 14px;
-    }
+.navlinks a:hover{color:var(--accent)}
 
-    .hero {
-      min-height: 82vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 7%;
-      background:
-        radial-gradient(circle at 80% 20%, #173f67 0%, transparent 30%),
-        radial-gradient(circle at 10% 80%, #12344f 0%, transparent 28%);
-    }
+.lang{
+  display:flex;
+  border:1px solid #31445c;
+  border-radius:20px;
+  overflow:hidden;
+}
 
-    .hero-content {
-      max-width: 900px;
-    }
+.lang button{
+  border:0;
+  background:transparent;
+  color:#8fa0b7;
+  padding:7px 11px;
+  cursor:pointer;
+  font-weight:700;
+}
 
-    .tag {
-      display: inline-block;
-      color: #65c7ff;
-      border: 1px solid #275f82;
-      background: #0c2135;
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 13px;
-      margin-bottom: 22px;
-    }
+.lang button.active{
+  background:#f4f7fb;
+  color:#07111f;
+}
 
-    h1 {
-      font-size: clamp(48px, 9vw, 92px);
-      line-height: .95;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
+/* HERO */
+.hero{
+  min-height:calc(100vh - 70px);
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:55px;
+  align-items:center;
+  padding:70px 7%;
+  background:
+    radial-gradient(circle at 85% 20%,#173f67 0%,transparent 28%),
+    radial-gradient(circle at 8% 85%,#12344f 0%,transparent 26%);
+}
 
-    .gradient {
-      background: linear-gradient(90deg,#62c6ff,#9b8cff);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+.tag{
+  display:inline-block;
+  color:var(--accent);
+  border:1px solid #275f82;
+  background:#0c2135;
+  padding:7px 13px;
+  border-radius:30px;
+  font-size:12px;
+  letter-spacing:.8px;
+  margin-bottom:20px;
+}
 
-    .intro {
-      max-width: 760px;
-      font-size: 21px;
-      color: #b9c5d6;
-      margin-bottom: 32px;
-    }
+h1{
+  font-size:clamp(50px,8vw,90px);
+  line-height:.94;
+  letter-spacing:-3px;
+  margin-bottom:24px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.gradient{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      border: 1px solid #31445c;
-    }
+.role{
+  font-size:clamp(20px,2.5vw,30px);
+  font-weight:700;
+  margin-bottom:16px;
+}
 
-    .primary {
-      background: #f4f7fb;
-      color: #07111f;
-      border-color: #f4f7fb;
-    }
+.intro{
+  max-width:760px;
+  font-size:19px;
+  color:#b9c5d6;
+  margin-bottom:30px;
+}
 
-    section {
-      padding: 80px 7%;
-      max-width: 1250px;
-      margin: auto;
-    }
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-    .section-label {
-      color: #65c7ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:8px;
+  font-weight:700;
+  border:1px solid #31445c;
+}
 
-    h2 {
-      font-size: clamp(30px,5vw,48px);
-      margin-bottom: 35px;
-    }
+.btn:hover{border-color:var(--accent)}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-      gap: 16px;
-    }
+.primary{
+  background:#f4f7fb;
+  color:#07111f;
+  border-color:#f4f7fb;
+}
 
-    .card {
-      background: #0d1928;
-      border: 1px solid #1e3045;
-      border-radius: 14px;
-      padding: 25px;
-    }
+/* PHOTO PLACEHOLDER */
+.portrait{
+  display:flex;
+  justify-content:center;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 19px;
-    }
+.photo{
+  width:min(330px,78vw);
+  aspect-ratio:4/5;
+  border-radius:26px;
+  border:1px solid #2c4763;
+  background:linear-gradient(145deg,#102b44,#0a1522);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#8192a8;
+  padding:35px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
 
-    .card p {
-      color: #9eafc4;
-      font-size: 15px;
-    }
+.initials{
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  border:2px solid #3e7197;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
+  font-weight:900;
+  color:#d7e7f5;
+  margin:auto auto 18px;
+}
 
-    .experience {
-      margin-top: 25px;
-      border-left: 2px solid #284762;
-      padding-left: 25px;
-    }
+/* SECTIONS */
+section{
+  padding:82px 7%;
+  max-width:1250px;
+  margin:auto;
+}
 
-    .job {
-      margin-bottom: 35px;
-    }
+.section-label{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:8px;
+}
 
-    .job span {
-      color: #65c7ff;
-      font-size: 13px;
-    }
+h2{
+  font-size:clamp(30px,5vw,48px);
+  margin-bottom:18px;
+}
 
-    .job h3 {
-      font-size: 22px;
-      margin: 4px 0 7px;
-    }
+.lead{
+  color:var(--muted);
+  max-width:850px;
+  font-size:18px;
+  margin-bottom:34px;
+}
 
-    .job p {
-      color: #aebbd0;
-      max-width: 850px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+}
 
-    .numbers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-      gap: 15px;
-      margin-top: 25px;
-    }
+.card,
+.number{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px;
+}
 
-    .number {
-      background: #0d1928;
-      border: 1px solid #1e3045;
-      padding: 25px;
-      border-radius: 14px;
-    }
+.card h3{
+  margin-bottom:9px;
+  font-size:18px;
+}
 
-    .number strong {
-      display: block;
-      color: #65c7ff;
-      font-size: 30px;
-      margin-bottom: 5px;
-    }
+.card p,
+.job p{
+  color:#9eafc4;
+  font-size:15px;
+}
 
-    .number span {
-      color: #9eafc4;
-      font-size: 14px;
-    }
+/* CAREER */
+.timeline{
+  border-left:2px solid #284762;
+  padding-left:25px;
+  margin-top:25px;
+}
 
-    .contact {
-      text-align: center;
-      padding-top: 100px;
-      padding-bottom: 110px;
-    }
+.job{margin-bottom:38px}
 
-    .contact p {
-      color: #aebbd0;
-      max-width: 650px;
-      margin: 0 auto 28px;
-      font-size: 18px;
-    }
+.job span{
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+}
 
-    footer {
-      text-align: center;
-      color: #718096;
-      padding: 30px;
-      border-top: 1px solid #1e2d40;
-      font-size: 13px;
-    }
+.job h3{
+  font-size:22px;
+  margin:3px 0 7px;
+}
 
-    @media(max-width:700px) {
-      nav {
-        padding: 16px 5%;
-      }
+.job .title{
+  color:#dce5ef;
+  font-weight:700;
+  margin-bottom:6px;
+}
 
-      .navlinks {
-        display: none;
-      }
+/* IMPACT */
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:15px;
+}
 
-      .hero,
-      section {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
+.number strong{
+  display:block;
+  color:var(--accent);
+  font-size:29px;
+  margin-bottom:5px;
+}
 
-      h1 {
-        letter-spacing: -2px;
-      }
+.number span{
+  color:#9eafc4;
+  font-size:14px;
+}
 
-      .intro {
-        font-size: 18px;
-      }
-    }
-  </style>
+/* CONTACT */
+.contact{
+  text-align:center;
+  padding-top:100px;
+  padding-bottom:110px;
+}
+
+.contact .lead{
+  margin:0 auto 28px;
+}
+
+footer{
+  text-align:center;
+  color:#718096;
+  padding:30px;
+  border-top:1px solid #1e2d40;
+  font-size:13px;
+}
+
+/* LANGUAGES */
+[data-lang]{display:none}
+
+body.lang-de [data-lang="de"],
+body.lang-en [data-lang="en"]{
+  display:revert;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+  nav{
+    padding:13px 5%;
+    gap:12px;
+  }
+
+  .navlinks{display:none}
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:55px 6%;
+  }
+
+  .portrait{grid-row:1}
+
+  .photo{
+    width:190px;
+    aspect-ratio:1/1;
+    border-radius:50%;
+    padding:20px;
+  }
+
+  .initials{
+    width:100px;
+    height:100px;
+    font-size:34px;
+    margin-bottom:0;
+  }
+
+  .photo small{display:none}
+
+  h1{letter-spacing:-2px}
+
+  .intro{font-size:17px}
+
+  section{padding:65px 6%}
+}
+</style>
 </head>
 
-<body>
+<body class="lang-de">
 
 <nav>
   <div class="logo">RK.</div>
 
-  <div class="navlinks">
+  <div class="navlinks" data-lang="de">
+    <a href="#profil">Profil</a>
     <a href="#expertise">Expertise</a>
-    <a href="#experience">Experience</a>
-    <a href="#impact">Impact</a>
-    <a href="#contact">Contact</a>
+    <a href="#karriere">Karriere</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#erfolge">Erfolge</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+
+  <div class="navlinks" data-lang="en">
+    <a href="#profil">Profile</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#karriere">Career</a>
+    <a href="#projekte">Projects</a>
+    <a href="#erfolge">Impact</a>
+    <a href="#kontakt">Contact</a>
+  </div>
+
+  <div class="lang">
+    <button id="deBtn" class="active" onclick="setLang('de')">DE</button>
+    <button id="enBtn" onclick="setLang('en')">EN</button>
   </div>
 </nav>
 
 
-<header class="hero">
-  <div class="hero-content">
+<header class="hero" id="profil">
 
-    <div class="tag">
-      IT · FINANCE · DIGITAL TRANSFORMATION
-    </div>
+  <div>
+    <div class="tag">IT · FINANCE · DIGITAL TRANSFORMATION</div>
 
     <h1>
       Romeo<br>
       <span class="gradient">Kandlen.</span>
     </h1>
 
-    <p class="intro">
-      Senior IT Project Manager & Controlling Leader with extensive
-      experience connecting finance, technology, data and business processes.
-      From ERP transformation and BI to automation, scalable reporting
-      architectures and international IT projects.
-    </p>
+    <div data-lang="de">
+      <div class="role">
+        Senior IT Projektmanager · Controlling · Digitale Transformation
+      </div>
 
-    <div class="buttons">
-      <a class="btn primary" href="#experience">
-        View Experience
-      </a>
+      <p class="intro">
+        Ich verbinde seit über 25 Jahren Finance, IT, Daten und operative
+        Prozesse – von internationalen IT-Projekten und ERP-Transformationen
+        bis zu Controlling, BI und Automatisierung.
+      </p>
 
-      <a class="btn" href="#contact">
-        Contact
-      </a>
+      <div class="buttons">
+        <a class="btn primary" href="#karriere">Meine Karriere</a>
+        <a class="btn" href="#projekte">Projekte</a>
+        <a class="btn" href="#kontakt">Kontakt</a>
+      </div>
     </div>
 
+    <div data-lang="en">
+      <div class="role">
+        Senior IT Project Manager · Controlling · Digital Transformation
+      </div>
+
+      <p class="intro">
+        For more than 25 years, I have connected finance, IT, data and
+        operational processes – from international IT projects and ERP
+        transformations to controlling, BI and automation.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#karriere">My Career</a>
+        <a class="btn" href="#projekte">Projects</a>
+        <a class="btn" href="#kontakt">Contact</a>
+      </div>
+    </div>
   </div>
+
+  <div class="portrait">
+    <div class="photo">
+      <div>
+        <div class="initials">RK</div>
+        <small data-lang="de">
+          Hier kommt später dein Foto hinein
+        </small>
+        <small data-lang="en">
+          Your portrait will be placed here
+        </small>
+      </div>
+    </div>
+  </div>
+
 </header>
 
 
 <section id="expertise">
 
-  <div class="section-label">Expertise</div>
-  <h2>Where business meets technology.</h2>
+  <div data-lang="de">
+    <div class="section-label">Expertise</div>
+    <h2>Business verstehen. Technologie umsetzen.</h2>
+    <p class="lead">
+      Meine Stärke liegt an der Schnittstelle zwischen Management,
+      Finance und IT: Prozesse verstehen, Strukturen schaffen und
+      Transformation messbar machen.
+    </p>
+  </div>
+
+  <div data-lang="en">
+    <div class="section-label">Expertise</div>
+    <h2>Understanding business. Delivering technology.</h2>
+    <p class="lead">
+      My strength is at the intersection of management, finance and IT:
+      understanding processes, creating structures and making
+      transformation measurable.
+    </p>
+  </div>
 
   <div class="grid">
 
@@ -319,7 +477,7 @@
       <h3>IT Project Management</h3>
       <p>
         ERP implementations, international rollouts, UAT,
-        stakeholder management and complex transformation programs.
+        stakeholder management and transformation programs.
       </p>
     </div>
 
@@ -327,7 +485,7 @@
       <h3>Finance & Controlling</h3>
       <p>
         Management reporting, profitability, budgeting,
-        cash flow, data quality and finance transformation.
+        cash flow, pricing and finance transformation.
       </p>
     </div>
 
@@ -335,31 +493,31 @@
       <h3>Microsoft Dynamics 365</h3>
       <p>
         Dynamics 365 Finance & Operations, process design,
-        implementation, integration and business requirements.
+        implementation, integration and rollout.
       </p>
     </div>
 
     <div class="card">
       <h3>BI & Data</h3>
       <p>
-        Power BI, Qlik Sense, SQL, data architecture,
-        KPI systems and automated management reporting.
+        Power BI, Qlik Sense, SQL, KPI systems,
+        data quality and automated management reporting.
       </p>
     </div>
 
     <div class="card">
-      <h3>Automation</h3>
+      <h3>Automation & AI</h3>
       <p>
         Workflow automation, digital processes,
-        AI-supported workflows and scalable reporting solutions.
+        scalable reporting and AI-supported workflows.
       </p>
     </div>
 
     <div class="card">
       <h3>Leadership</h3>
       <p>
-        Building teams, leading cross-functional projects
-        and connecting IT, Finance and operational business units.
+        Team building, cross-functional leadership and
+        collaboration across IT, Finance and Operations.
       </p>
     </div>
 
@@ -367,39 +525,90 @@
 </section>
 
 
-<section id="experience">
+<section id="karriere">
 
-  <div class="section-label">Experience</div>
-  <h2>25 years of transformation.</h2>
+  <div data-lang="de">
+    <div class="section-label">Karriere</div>
+    <h2>25+ Jahre Transformation und Führung.</h2>
+    <p class="lead">
+      Vom Aufbau von IT-Strukturen über internationale Projekte
+      bis zur Leitung von Controlling und ERP-Transformation.
+    </p>
+  </div>
 
-  <div class="experience">
+  <div data-lang="en">
+    <div class="section-label">Career</div>
+    <h2>25+ years of transformation and leadership.</h2>
+    <p class="lead">
+      From building IT organizations and delivering international
+      projects to leading controlling and ERP transformation.
+    </p>
+  </div>
+
+  <div class="timeline">
 
     <div class="job">
       <span>2023 – 2025</span>
       <h3>STARCAR Europa Service Group AG</h3>
-      <p>
-        IT Project Manager Dynamics 365 and later Head of Group Controlling.
-        Responsible for ERP transformation, reporting architecture,
-        profit-center structures, pricing, data quality and management reporting.
+
+      <div class="title" data-lang="de">
+        IT-Projektleiter Dynamics 365 · Konzernleiter Controlling
+      </div>
+
+      <div class="title" data-lang="en">
+        IT Project Manager Dynamics 365 · Head of Group Controlling
+      </div>
+
+      <p data-lang="de">
+        ERP-Transformation, Datenarchitektur, Profitcenter,
+        Reporting, Pricing und Datenqualität für mehrere Gesellschaften.
+      </p>
+
+      <p data-lang="en">
+        ERP transformation, data architecture, profit centers,
+        reporting, pricing and data quality across multiple entities.
       </p>
     </div>
+
 
     <div class="job">
       <span>Senior Project Management</span>
       <h3>GERRY WEBER</h3>
-      <p>
-        Senior ERP Project Manager with focus on Microsoft Dynamics 365
-        and digital transformation within an international fashion environment.
+
+      <div class="title">
+        Senior Project Manager ERP · Microsoft Dynamics 365
+      </div>
+
+      <p data-lang="de">
+        ERP- und Transformationsprojekte in einem internationalen
+        Fashion-Umfeld.
+      </p>
+
+      <p data-lang="en">
+        ERP and transformation projects in an international
+        fashion environment.
       </p>
     </div>
 
+
     <div class="job">
-      <span>20+ years</span>
+      <span>20+ Jahre</span>
       <h3>Enterprise Mobility</h3>
-      <p>
-        Long-term leadership career across IT, controlling and corporate
-        functions. Built IT structures, delivered international technology
-        projects and developed automated finance and reporting solutions.
+
+      <div class="title">
+        Leadership · IT · Controlling · Corporate Functions
+      </div>
+
+      <p data-lang="de">
+        Aufbau von IT-Strukturen, internationale Technologieprojekte,
+        Finance-Automatisierung und Reporting-Lösungen in Zusammenarbeit
+        mit europäischen und US-Teams.
+      </p>
+
+      <p data-lang="en">
+        Built IT structures, delivered international technology projects
+        and developed finance automation and reporting solutions with
+        European and US teams.
       </p>
     </div>
 
@@ -407,52 +616,167 @@
 </section>
 
 
-<section id="impact">
+<section id="projekte">
 
-  <div class="section-label">Selected Impact</div>
-  <h2>Transformation measured in results.</h2>
+  <div data-lang="de">
+    <div class="section-label">Ausgewählte Projekte</div>
+    <h2>Von der Idee bis zum messbaren Ergebnis.</h2>
+    <p class="lead">
+      Beispiele aus ERP, Finance, Daten, Infrastruktur und Digitalisierung.
+    </p>
+  </div>
+
+  <div data-lang="en">
+    <div class="section-label">Selected Projects</div>
+    <h2>From idea to measurable outcome.</h2>
+    <p class="lead">
+      Selected examples across ERP, finance, data,
+      infrastructure and digital transformation.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Dynamics 365 Transformation</h3>
+      <p data-lang="de">
+        POC, Integration, Prozessdesign, UAT und Rollout
+        im internationalen ERP-Umfeld.
+      </p>
+      <p data-lang="en">
+        POC, integration, process design, UAT and rollout
+        in an international ERP environment.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>BI & Reporting Automation</h3>
+      <p data-lang="de">
+        Automatisierte Management- und BI-Berichte,
+        Datenarchitektur und KPI-Strukturen.
+      </p>
+      <p data-lang="en">
+        Automated management and BI reporting,
+        data architecture and KPI structures.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Digital Finance Workflows</h3>
+      <p data-lang="de">
+        Digitalisierung von Finance-Prozessen,
+        DMS-/ERP-Integration und automatisierte Workflows.
+      </p>
+      <p data-lang="en">
+        Digitization of finance processes,
+        DMS/ERP integration and automated workflows.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>IT Infrastructure & Rollouts</h3>
+      <p data-lang="de">
+        Netzwerk, VoIP, Geräte-Rollouts und internationale
+        Zusammenarbeit mit IT-Teams.
+      </p>
+      <p data-lang="en">
+        Network, VoIP, device rollouts and international
+        collaboration with IT teams.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="erfolge">
+
+  <div data-lang="de">
+    <div class="section-label">Erfolge</div>
+    <h2>Transformation in Zahlen.</h2>
+  </div>
+
+  <div data-lang="en">
+    <div class="section-label">Impact</div>
+    <h2>Transformation measured in results.</h2>
+  </div>
 
   <div class="numbers">
 
     <div class="number">
       <strong>€1.5M</strong>
-      <span>Impact through debtor banking transformation</span>
+      <span data-lang="de">
+        Effekt durch Debitoren-Banking-Transformation
+      </span>
+      <span data-lang="en">
+        Impact through debtor banking transformation
+      </span>
     </div>
 
     <div class="number">
       <strong>€420K</strong>
-      <span>Annual savings through network & VoIP transformation</span>
+      <span data-lang="de">
+        Einsparung durch Netzwerk- & VoIP-Transformation
+      </span>
+      <span data-lang="en">
+        Savings through network & VoIP transformation
+      </span>
     </div>
 
     <div class="number">
       <strong>€400K</strong>
-      <span>Savings through digital archive transformation</span>
+      <span data-lang="de">
+        Einsparung durch digitale Archivierung
+      </span>
+      <span data-lang="en">
+        Savings through digital archive transformation
+      </span>
     </div>
 
     <div class="number">
       <strong>3,000+</strong>
-      <span>Automated BI reports per year</span>
+      <span data-lang="de">
+        automatisierte BI-Berichte pro Jahr
+      </span>
+      <span data-lang="en">
+        automated BI reports per year
+      </span>
     </div>
 
   </div>
 </section>
 
 
-<section id="contact" class="contact">
+<section id="kontakt" class="contact">
 
-  <div class="section-label">Contact</div>
+  <div data-lang="de">
+    <div class="section-label">Kontakt</div>
+    <h2>Bereit für die nächste Transformation.</h2>
 
-  <h2>Let's build what comes next.</h2>
+    <p class="lead">
+      Offen für Senior- und Führungsrollen in IT-Projektmanagement,
+      Controlling, Finance Transformation und Digitalisierung.
+    </p>
 
-  <p>
-    Open to senior leadership, IT project management,
-    finance transformation and digitalization opportunities.
-  </p>
+    <a class="btn primary" href="mailto:romeotrust@gmail.com">
+      Romeo kontaktieren
+    </a>
+  </div>
 
-  <a class="btn primary"
-     href="mailto:romeotrust@gmail.com">
-     Contact Romeo
-  </a>
+
+  <div data-lang="en">
+    <div class="section-label">Contact</div>
+    <h2>Ready for the next transformation.</h2>
+
+    <p class="lead">
+      Open to senior and leadership roles in IT project management,
+      controlling, finance transformation and digitalization.
+    </p>
+
+    <a class="btn primary" href="mailto:romeotrust@gmail.com">
+      Contact Romeo
+    </a>
+  </div>
 
 </section>
 
@@ -460,6 +784,24 @@
 <footer>
   © 2026 Romeo Kandlen · IT · Finance · Transformation
 </footer>
+
+
+<script>
+function setLang(lang){
+  document.body.className='lang-'+lang;
+  document.documentElement.lang=lang;
+
+  document.getElementById('deBtn')
+    .classList.toggle('active',lang==='de');
+
+  document.getElementById('enBtn')
+    .classList.toggle('active',lang==='en');
+
+  localStorage.setItem('rk-lang',lang);
+}
+
+setLang(localStorage.getItem('rk-lang') || 'de');
+</script>
 
 </body>
 </html>
